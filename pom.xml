@@ -37,9 +37,9 @@
 			</plugin>
 			<!--Configure Jacoco Plogin -->
 			<plugin>
-				<groupId><!--Configure the group id--></groupId>
-				<artifactId><!--Configure the artifact id --></artifactId>
-				<version>${jacoco.version}</version>
+				<groupId>org.jacoco</groupId>
+				<artifactId>jacoco-maven-plugin</artifactId>
+				<version>0.7.5.201505241946</version>
 				<configuration>
 
 					<skip>false</skip>
@@ -50,9 +50,18 @@
 
 					<execution>
 						<!--Configure the goal:prepare-agent -->
+						 <id>jacoco-initialize</id>
+						 <goals>
+						  <goal>prepare-agent</goal>
+						 </goals>
 					</execution>
 					<execution>
-						<!--Configure the goal:report -->
+					<!--Configure the goal:report -->
+						<id>jacoco-site</id>
+						 <phase>verify</phase>
+						 <goals>
+						  <goal>report</goal>
+						 </goals>
 					</execution>
 
 					<execution>

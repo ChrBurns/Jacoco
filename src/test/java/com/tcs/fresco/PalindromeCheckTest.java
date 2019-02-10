@@ -1,7 +1,7 @@
   package com.tcs.fresco;
 
 import static org.junit.jupiter.api.Assertions.assertTrue;
-
+import static org.junit.jupiter.api.Assertions.assertFalse;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -16,8 +16,9 @@ class PalindromeCheckTest {
 	}
 
 	@Test
-	void testPalindromeValid() {
+	void checkPalindromeTest() {
 		assertTrue(palindromeCheck.checkPalindrome("radar"));
+		assertFalse(palindromeCheck.checkPalindrome("test"));
 	}
 
 }
